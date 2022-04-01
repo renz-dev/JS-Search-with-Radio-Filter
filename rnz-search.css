@@ -1,0 +1,163 @@
+:root {
+    --radio-control-color: #ed1c24;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+}
+h1 {
+    color: #ed1c24;
+    margin-bottom: 30px;
+}
+
+/* ================================================================= */
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 960px;
+}
+.container > h1 {
+    text-align: center;
+}
+
+.searchContainer {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+}
+
+#searchResults {
+    margin-top: 42px;
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: min-content;
+    grid-gap: 20px;
+    height: 660px;
+    overflow: auto;
+}
+
+/* ================================================================= */
+.searchItem {
+    list-style-type: none;
+    height: fit-content;
+    background-color: #fff;
+    border: 1px solid #d3d4f0;
+    border-radius: 1px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 0.6fr 3fr;
+    grid-template-areas:
+        'image name'
+        'image house';
+    text-align: left;
+}
+.searchItem > h3 {
+    grid-area: name;
+    margin-bottom: 0;
+}
+
+.searchItem > p {
+    grid-area: house;
+}
+
+.searchItem > img {
+    max-height: 100px;
+    grid-area: image;
+    margin-block-start: 1em;
+}
+
+/* ================================================================= */
+#searchBar {
+    width: 100%;
+    height: 48px;
+    border-radius: 1px;
+    border: 1px solid #bdbfc1;
+    padding: 5px 50px 5px 10px;
+    font-size: 15px;
+}
+#searchBar:focus {
+    border: 3px solid #ed1c24;
+}
+
+/* ================================================================= */
+#searchWrapper {
+    position: relative;
+    padding: 16px 20px;
+}
+#searchWrapper > h2 {
+    margin: 0;
+    border-bottom: 3px solid #ed1c24;
+}
+#searchWrapper::after {
+    content: url('https://api.iconify.design/fe/search.svg');
+    position: absolute;
+    top: 65px;
+    right: 40px;
+}
+
+/* ================================================================= */
+.radio-control {
+    font-family: system-ui, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+.radio-control + .radio-control {
+    margin-top: 1em;
+}
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1em;
+    height: 1em;
+    border: 0.15em solid #545454;
+    border-radius: 5%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+/* Ready :checked state style */
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--radio-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+input[type="radio"]:checked::before {
+    transform: scale(0.8);
+}
+/* Ready :focus state style */
+input[type="radio"]:focus {
+    outline: max(0px, 0.05em) solid currentColor;
+    outline-offset: max(0px, 0.05em);
+}
+.form-control:focus-within {
+    color: var(--radio-control-color);
+  }
+
+/* ================================================================= */
+.spacer-24 {
+    height: 24px;
+}
+.spacer-36 {
+    height: 36px;
+}

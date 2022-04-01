@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Search with Radio Filter</title>
+    <link rel="stylesheet" href="rnz-search.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>TEST Quick Search</h1>
+        <div class="searchContainer">
+            <div id="searchWrapper">
+                <h2>Search</h2>
+                <input type="text" name="searchBar" id="searchBar" placeholder="search here..." />
+                <div class="spacer-36"></div>
+                <h2>Practice Areas</h2>
+                <div class="spacer-24"></div>
+                <label class="radio-control">
+                    <input type="radio" name="paFilter" id="paFilter" value="PALL" checked />
+                    ALL
+                </label>
+                <label class="radio-control">
+                    <input type="radio" name="paFilter" id="paFilter" value="PA1" />
+                    PA 1
+                </label>
+                <label class="radio-control">
+                    <input type="radio" name="paFilter" id="paFilter" value="PA2" />
+                    PA 2
+                </label>
+                <label class="radio-control">
+                    <input type="radio" name="paFilter" id="paFilter" value="PA3" />
+                    PA 3
+                </label>
+                <label class="radio-control">
+                    <input type="radio" name="paFilter" id="paFilter" value="PA4" />
+                    PA 4
+                </label>
+                <label class="radio-control">
+                    <input type="radio" name="paFilter" id="paFilter" value="PA5" />
+                    PA 5
+                </label>
+            </div>
+            <ul id="searchResults"></ul>
+        </div>
+    </div>
+    <script src="rnz-search.js"></script>
+</body>
+
+</html>
